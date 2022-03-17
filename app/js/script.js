@@ -128,24 +128,7 @@ let card17 = new Card(
   'https://icdn.digitaltrends.com/image/digitaltrends/the-last-of-us-part-ii_20200708100158-1920x1080.jpg'
 );
 
-let cards = [
-  card1,
-  card2,
-  card3,
-  card4,
-  card5,
-  card6,
-  card7,
-  card8,
-  card9,
-  card10,
-  card11,
-  card12,
-  card13,
-  card14,
-  card15,
-  card16,
-];
+let cards = [];
 
 let radioAttributes = document.getElementsByName('attribute');
 
@@ -160,19 +143,25 @@ let aiScore = 0;
 let playerScore = 0;
 let cardAi;
 let cardPlayer;
+let playerUsedCards;
+let aiUsedCards;
 
 function sortCards() {
+  let cardPlayerNum = parseInt(Math.random() * cards.length);
   let cardAiNum = parseInt(Math.random() * cards.length);
   cardAi = cards[cardAiNum];
 
-  let cardPlayerNum = parseInt(Math.random() * cards.length);
+  cardPlayer = cards[cardPlayerNum];
+
   while (cardAiNum == cardPlayerNum) {
     cardPlayerNum = parseInt(Math.random() * cards.length);
   }
-  cardPlayer = cards[cardPlayerNum];
+
+  aiUsedCards = cards.splice(cardAiNum, 1);
 
   showAiCard();
   showPlayerCard();
+  console.log(cards);
 }
 
 sortBtn.addEventListener('click', () => {
@@ -246,7 +235,7 @@ playBtn.addEventListener('click', () => {
       setTimeout(() => {
         divCardPlayer.style.display = 'none';
       }, 3000);
-    } else {
+    } else if (cardPlayerStat < cardAiStat) {
       elementResult.innerHTML = `Você perdeu esse round! ${cardAi.name} tem ${cardAiStat} de ${selectedAttr} e ${cardPlayer.name} tem ${cardPlayerStat}!`;
       divCardPlayer.style.display = 'none';
       aiScore++;
@@ -278,6 +267,27 @@ function startGame() {
   aiScore = 0;
   playerScore = 0;
   sortBtn.disabled = false;
+
+  cards = [
+    card1,
+    card2,
+    card3,
+    card4,
+    card5,
+    card6,
+    card7,
+    card8,
+    card9,
+    card10,
+    card11,
+    card12,
+    card13,
+    card14,
+    card15,
+    card16,
+    card17,
+  ];
+
   countRoundsAndScore();
 }
 
