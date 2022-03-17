@@ -65,7 +65,6 @@ td {
 .wrapper {
   display: flex;
   justify-content: center;
-
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 25px;
@@ -160,5 +159,14 @@ td {
 @media screen and (max-width: 1070px) {
   body {
     overflow: auto;
+  }
+  .card {
+    width: 16rem;
+    height: 18rem;
+  }
+  .card::before {
+    content: '';
+    width: 17rem;
+    height: 19rem;
   }
 }
