@@ -76,8 +76,8 @@ td {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-  width: 20rem;
-  height: 22rem;
+  width: 18rem;
+  height: 19rem;
 }
 .card::before {
   content: '';
@@ -90,8 +90,8 @@ td {
   );
   border: 2px solid rgba(255, 255, 255, 0.507);
   border-radius: 10px;
-  width: 21rem;
-  height: 23rem;
+  width: 19rem;
+  height: 21rem;
   position: absolute;
   z-index: -3000;
 }
