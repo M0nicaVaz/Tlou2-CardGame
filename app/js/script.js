@@ -78,6 +78,55 @@ let card10 = new Card(
   15,
   'https://digitaltrends-uploads-prod.s3.amazonaws.com/2020/07/the-last-of-us-part-2-stalker.jpg'
 );
+let card11 = new Card(
+  'JJ',
+  100,
+  01,
+  10,
+  'https://64.media.tumblr.com/c422a6c3903ec107892c1c6a75c6235e/3e8de250e3c9353f-4f/s500x750/b1daa5b9539e539bd0ff4c640c5a57dfda6342ce.jpg'
+);
+let card12 = new Card(
+  'Maria',
+  32,
+  70,
+  30,
+  'https://i.ytimg.com/vi/WkqJMvRDbFE/maxresdefault.jpg'
+);
+let card13 = new Card(
+  'Alice',
+  00,
+  92,
+  51,
+  'https://thelastofus.com.br/wp-content/uploads/2021/08/Cena-de-cachorro-lamentando-perda-do-dono-em-The-Last-of-Us-2-e-de-partir-o-coracao.jpg'
+);
+let card14 = new Card(
+  'Owen',
+  00,
+  81,
+  45,
+  'https://img.game8.co/3253668/37cb30d83159273a09bcd4c3eac43dc1.jpeg/show'
+);
+let card15 = new Card(
+  'Mel',
+  00,
+  37,
+  62,
+  'https://img.game8.co/3253673/43e4ae0186bd6083dc0b0f1bda3d6fae.jpeg/show'
+);
+let card16 = new Card(
+  'Manny',
+  00,
+  93,
+  62,
+  'https://img.game8.co/3253714/59d1b2cada49306c655dc50b5690e78e.jpeg/show'
+);
+let card17 = new Card(
+  'Rei dos Ratos',
+  00,
+  100,
+  80,
+  'https://icdn.digitaltrends.com/image/digitaltrends/the-last-of-us-part-ii_20200708100158-1920x1080.jpg'
+);
 
 let cards = [
   card1,
@@ -90,6 +139,12 @@ let cards = [
   card8,
   card9,
   card10,
+  card11,
+  card12,
+  card13,
+  card14,
+  card15,
+  card16,
 ];
 
 let radioAttributes = document.getElementsByName('attribute');
@@ -191,18 +246,12 @@ playBtn.addEventListener('click', () => {
       setTimeout(() => {
         divCardPlayer.style.display = 'none';
       }, 3000);
-    } else if (cardAiStat > cardPlayerStat) {
+    } else {
       elementResult.innerHTML = `Você perdeu esse round! ${cardAi.name} tem ${cardAiStat} de ${selectedAttr} e ${cardPlayer.name} tem ${cardPlayerStat}!`;
       divCardPlayer.style.display = 'none';
       aiScore++;
       setTimeout(() => {
         divCardAi.style.display = 'none';
-      }, 3000);
-    } else {
-      elementResult.innerHTML = `Empate! ${cardPlayer.name} tem tanto ${selectedAttr} quanto ${cardAi.name}!`;
-      setTimeout(() => {
-        divCardAi.style.display = 'none';
-        divCardPlayer.style.display = 'none';
       }, 3000);
     }
 
