@@ -222,8 +222,10 @@ function countRoundsAndScore() {
     roundElement.classList.toggle('game-over');
     if (playerScore > aiScore) {
       roundElement.textContent = `GAME OVER! HUMANO VENCEU!`;
-    } else {
+    } else if (playerScore < aiScore) {
       roundElement.textContent = `GAME OVER! COMPUTADOR VENCEU!`;
+    } else {
+      roundElement.textContent = `GAME OVER! FOI UM EMPATE!`;
     }
 
     sortBtn.disabled = true;
@@ -296,6 +298,9 @@ playBtn.addEventListener('click', () => {
       setTimeout(() => {
         divCardAi.style.display = 'none';
       }, 3000);
+    } else {
+      elementResult.innerHTML = `Empate! ${cardAi.name} tem ${cardAiStat} de ${selectedAttr} e ${cardPlayer.name} tem ${cardPlayerStat}!`;
+      divCardPlayer.style.display = 'none';
     }
 
     setTimeout(() => {
