@@ -304,11 +304,10 @@ function countRoundsAndScore() {
     roundElement.classList.toggle('game-over');
     if (playerScore > aiScore) {
       roundElement.textContent = `GAME OVER! HUMANO VENCEU!`;
-    } else if (aiScore > playerScore) {
-      roundElement.textContent = `GAME OVER! COMPUTADOR VENCEU!`;
     } else {
-      roundElement.textContent = `GAME OVER! EMPATE`;
+      roundElement.textContent = `GAME OVER! COMPUTADOR VENCEU!`;
     }
+
     sortBtn.disabled = true;
     setTimeout(() => {
       startGame();
