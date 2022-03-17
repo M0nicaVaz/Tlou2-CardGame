@@ -147,10 +147,10 @@ let playerUsedCards;
 let aiUsedCards;
 
 function sortCards() {
-  let cardPlayerNum = parseInt(Math.random() * cards.length);
+  let cardAiNum = parseInt(Math.random() * cards.length);
   cardAi = cards[cardAiNum];
 
-  let cardAiNum = parseInt(Math.random() * cards.length);
+  let cardPlayerNum = parseInt(Math.random() * cards.length);
   while (cardAiNum == cardPlayerNum) {
     cardPlayerNum = parseInt(Math.random() * cards.length);
   }
