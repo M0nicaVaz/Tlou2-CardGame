@@ -162,13 +162,6 @@ function sortCards() {
   showPlayerCard();
 }
 
-sortBtn.addEventListener('click', () => {
-  sortCards();
-
-  sortBtn.style.display = 'none';
-  playBtn.style.display = 'block';
-});
-
 function clearCard() {
   divCardPlayer.style.display = 'none';
   divCardAi.style.display = 'none';
@@ -214,6 +207,69 @@ function showAiCard() {
   divCardAi.innerHTML = `${aiName} ${cardAiImg} ${aiTagHTML}</div>`;
 }
 
+function countRoundsAndScore() {
+  let roundElement = document.querySelector('#round-counter');
+  round++;
+  roundElement.textContent = `ROUND ${round}`;
+
+  let scoreElement = document.querySelector('#score');
+  scoreElement.innerHTML = `<tr>
+  <td>${playerScore}</td>
+  <td>${aiScore}</td>
+  <tr>`;
+
+  if (round > 5) {
+    roundElement.classList.toggle('game-over');
+    if (playerScore > aiScore) {
+      roundElement.textContent = `GAME OVER! HUMANO VENCEU!`;
+    } else {
+      roundElement.textContent = `GAME OVER! COMPUTADOR VENCEU!`;
+    }
+
+    sortBtn.disabled = true;
+    setTimeout(() => {
+      startGame();
+      roundElement.textContent = `ROUND ${round}`;
+      roundElement.classList.toggle('game-over');
+    }, 2000);
+  }
+}
+
+function startGame() {
+  document.querySelector('.container').classList.toggle('display-none');
+  document.querySelector('#homeScreen').classList.toggle('display-none');
+  round = 0;
+  aiScore = 0;
+  playerScore = 0;
+  sortBtn.disabled = false;
+
+  cards = [
+    card1,
+    card2,
+    card3,
+    card4,
+    card5,
+    card6,
+    card7,
+    card8,
+    card9,
+    card10,
+    card11,
+    card12,
+    card13,
+    card14,
+    card15,
+    card16,
+    card17,
+  ];
+
+  countRoundsAndScore();
+}
+
+homeBtn.addEventListener('click', () => {
+  startGame();
+});
+
 playBtn.addEventListener('click', () => {
   let selectedAttr = getSelectedAttr();
   let elementResult = document.querySelector('#result');
@@ -252,67 +308,9 @@ playBtn.addEventListener('click', () => {
   }
 });
 
-//  home page
+sortBtn.addEventListener('click', () => {
+  sortCards();
 
-homeBtn.addEventListener('click', () => {
-  startGame();
+  sortBtn.style.display = 'none';
+  playBtn.style.display = 'block';
 });
-
-function startGame() {
-  document.querySelector('.container').classList.toggle('display-none');
-  document.querySelector('#homeScreen').classList.toggle('display-none');
-  round = 0;
-  aiScore = 0;
-  playerScore = 0;
-  sortBtn.disabled = false;
-
-  cards = [
-    card1,
-    card2,
-    card3,
-    card4,
-    card5,
-    card6,
-    card7,
-    card8,
-    card9,
-    card10,
-    card11,
-    card12,
-    card13,
-    card14,
-    card15,
-    card16,
-    card17,
-  ];
-
-  countRoundsAndScore();
-}
-
-function countRoundsAndScore() {
-  let roundElement = document.querySelector('#round-counter');
-  round++;
-  roundElement.textContent = `ROUND ${round}`;
-
-  let scoreElement = document.querySelector('#score');
-  scoreElement.innerHTML = `<tr>
-  <td>${playerScore}</td>
-  <td>${aiScore}</td>
-  <tr>`;
-
-  if (round > 5) {
-    roundElement.classList.toggle('game-over');
-    if (playerScore > aiScore) {
-      roundElement.textContent = `GAME OVER! HUMANO VENCEU!`;
-    } else {
-      roundElement.textContent = `GAME OVER! COMPUTADOR VENCEU!`;
-    }
-
-    sortBtn.disabled = true;
-    setTimeout(() => {
-      startGame();
-      roundElement.textContent = `ROUND ${round}`;
-      roundElement.classList.toggle('game-over');
-    }, 2000);
-  }
-}
