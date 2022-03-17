@@ -301,6 +301,7 @@ playBtn.addEventListener('click', () => {
     } else {
       elementResult.innerHTML = `Empate! ${cardAi.name} tem ${cardAiStat} de ${selectedAttr} e ${cardPlayer.name} tem ${cardPlayerStat}!`;
       divCardPlayer.style.display = 'none';
+      divCardAi.style.display = 'none';
     }
 
     setTimeout(() => {
