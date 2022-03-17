@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TLOU2 Trunfo</title>
+    <link rel="stylesheet" href="app/css/style.css" />
+  </head>
+
+  <body>
+    <div id="homeScreen" class="homeScreen">
+      <h1 class="homepage-title">THE LAST OF US PART II</h1>
+      <h2 class="homepage-subtitle">CARD GAME</h2>
+      <p class="game-description">
+        Os jogos tem duração de 5 rounds. Para vencer o round você precisa
+        escolher um atributo que acredita ser maior que da carta do seu
+        oponente. Vence o jogo quem ganhar mais rounds!
+      </p>
+      <button class="btn" id="homeBtn">Jogar</button>
+    </div>
+
+    <div class="container display-none">
+      <img
+        src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png"
+        class="page-logo"
+        alt=""
+      />
+      <h1 class="page-title">THE LAST OF US PART II</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>HUMANO</th>
+            <th>COMPUTADOR</th>
+          </tr>
+        </thead>
+        <tbody id="score"></tbody>
+      </table>
+      <h2 class="page-subtitle" id="round-counter">ROUND 1</h2>
+      <button id="sortBtn" class="sort-btn btn">Sortear carta</button>
+
+      <div class="wrapper">
+        <div id="card-player" class="card player">
+          <div class="card-img" id="playerImg"></div>
+        </div>
+
+        <div id="card-ai" class="card">
+          <div class="card-img" id="aiImg"></div>
+        </div>
+      </div>
+
+      <form id="form">
+        <div class="options" id="options"></div>
+        <button type="button" class="play-btn btn" id="playBtn">Jogar</button>
+        <div class="result-wrapper" id="result"></div>
+      </form>
+    </div>
+
+    <script src="app/js/script.js"></script>
+  </body>
+</html>

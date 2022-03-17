@@ -1,0 +1,164 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #3b3a3a;
+  /* background-image: url('https://picfiles.alphacoders.com/387/387860.jpg'); */
+  background-image: url('https://d2skuhm0vrry40.cloudfront.net/2019/articles/2019-09-25-12-28/TLOUPII_SOP_SCREEN_04.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding-bottom: 20vh;
+}
+button {
+  padding: 0.8rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+table {
+  color: white;
+  text-shadow: 2px 2px rgb(36, 13, 0);
+  font-size: 1.3rem;
+  text-align: center;
+  margin: auto;
+}
+tr,
+td {
+  border: 1px solid rgb(36, 13, 0);
+}
+.homeScreen {
+  color: white;
+  text-shadow: 2px 2px rgb(36, 13, 0);
+  font-variant: small-caps;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin: auto;
+  top: 30vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title,
+.page-subtitle {
+  margin: 5px 0;
+  color: white;
+  text-shadow: 2px 2px rgb(36, 13, 0);
+}
+.game-description {
+  text-shadow: none;
+  width: 60%;
+  margin: auto;
+  color: rgb(251, 253, 150);
+  text-shadow: 1px 1px rgb(36, 13, 0);
+  font-size: 1.05rem;
+}
+.page-logo {
+  width: 100px;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 25px;
+}
+.card {
+  background: #0d0d0d;
+  text-align: left;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  width: 20rem;
+  height: 22rem;
+}
+.card::before {
+  content: '';
+  background: rgb(36, 13, 0);
+  background: linear-gradient(
+    145deg,
+    rgba(36, 13, 0, 1) 0%,
+    rgba(239, 240, 185, 1) 45%,
+    rgb(56, 49, 26) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.507);
+  border-radius: 10px;
+  width: 21rem;
+  height: 23rem;
+  position: absolute;
+  z-index: -3000;
+}
+.card-img {
+  position: relative;
+  align-self: center;
+  border-radius: 4px;
+  width: 90%;
+}
+.card-img img {
+  width: 50%;
+  margin: auto;
+}
+.card-status {
+  color: white;
+  font-variant: small-caps;
+  font-weight: 900;
+  font-size: 1.1rem;
+  align-self: center;
+}
+.card-subtitle {
+  color: white;
+  font-variant: small-caps;
+  font-weight: 900;
+  font-size: 1.5rem;
+  align-self: center;
+}
+.card input {
+  margin: 5px 10px;
+}
+.result-wrapper {
+  color: white;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+.btn {
+  margin: auto;
+  margin-top: 30px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(36, 13, 0, 1) 0%,
+    rgba(239, 240, 185, 1) 45%,
+    rgb(56, 49, 26) 100%
+  );
+  transform: scale(1.1);
+  color: rgb(36, 13, 0);
+}
+.play-btn {
+  display: none;
+}
+.display-none {
+  display: none;
+}
+.game-over {
+  color: red;
+  text-shadow: 2px 2px rgb(36, 13, 0);
+  font-size: 2rem;
+}
+@media screen and (max-width: 1070px) {
+  body {
+    overflow: auto;
+  }
+}
