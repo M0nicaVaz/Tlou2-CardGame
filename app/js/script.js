@@ -10,8 +10,8 @@ function Card(name, vitality, strength, stealth, imgUrl) {
 
 let card1 = new Card(
   'Ellie',
-  95,
-  60,
+  96,
+  63,
   85,
   'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/08/ellie-tlou2-3.jpg'
 );
@@ -31,7 +31,7 @@ let card3 = new Card(
 );
 let card4 = new Card(
   'Abby',
-  92,
+  90,
   85,
   65,
   'https://s2.glbimg.com/2OHh2Dw0gCVSjrYOtv6X4yNGHCA=/0x0:1920x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/t/n/3BORX0SAy9q3KBK5dwHw/the-last-of-us-part-2-abby.jpeg'
@@ -61,7 +61,7 @@ let card8 = new Card(
   'Corredor',
   10,
   80,
-  0,
+  1,
   'https://static2.srcdn.com/wordpress/wp-content/uploads/2020/06/LastOfUs-03.jpg'
 );
 let card9 = new Card(
@@ -80,7 +80,7 @@ let card10 = new Card(
 );
 let card11 = new Card(
   'JJ',
-  100,
+  99,
   01,
   10,
   'https://64.media.tumblr.com/c422a6c3903ec107892c1c6a75c6235e/3e8de250e3c9353f-4f/s500x750/b1daa5b9539e539bd0ff4c640c5a57dfda6342ce.jpg'
@@ -122,8 +122,8 @@ let card16 = new Card(
 );
 let card17 = new Card(
   'Rei dos Ratos',
-  00,
-  100,
+  01,
+  99,
   80,
   'https://icdn.digitaltrends.com/image/digitaltrends/the-last-of-us-part-ii_20200708100158-1920x1080.jpg'
 );
